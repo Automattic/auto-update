@@ -57,9 +57,9 @@ Before creating a new port, please open an issue so that we can avoid situations
 
 ## Contributors
 
-* @TooTallNate
-* @coreh
-* @guille
+* [@TooTallNate](https://github.com/TooTallNate)
+* [@coreh](https://github.com/coreh)
+* [@guille](https://github.com/guille)
 
 ## License
 
