@@ -41,7 +41,7 @@ On the OS X port, updates are simply the latest application bundle, compressed a
 
 ## Creating New Ports
 
-New ports should be created on a separate git branch, inside a new directory with the AutoUpdate.XYZ name, where XYZ is the name of the port. For example, for a Python port you should do:
+New ports should be created on a separate git branch, inside a new directory with the `AutoUpdate.XYZ` name, where `XYZ` is the name of the port. For example, for a Python port you should do:
 
 ```bash
 git checkout -b python
