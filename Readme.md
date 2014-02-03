@@ -11,7 +11,7 @@ Currently, two ports of the client-side library are available:
 * An Objective-C / Cocoa port, for OSX 10.6+
 * A C# / .NET port, for Windows XP/Vista/7/8/8.1
 
-The .NET port is currently behind the Cocoa port, and is not quite ready for production use. It's temporarily available only under the `dot-net` branch. Once it reaches parity with the Cocoa port it will be merged back to master.
+The .NET port is currently behind the Cocoa port, and is not quite ready for production use. It's temporarily available only under the [`dot-net`](https://github.com/cloudup/auto-update/tree/dot-net) branch. Once it reaches parity with the Cocoa port it will be merged back to master.
 
 We intend to have as many ports as possible.
 
@@ -41,7 +41,7 @@ On the OS X port, updates are simply the latest application bundle, compressed a
 
 ## Creating New Ports
 
-New ports should be created on a separate git branch, inside a new directory with the AutoUpdate.XYZ name, where XYZ is the name of the port. For example, for a Python port you should do:
+New ports should be created on a separate git branch, inside a new directory with the `AutoUpdate.XYZ` name, where `XYZ` is the name of the port. For example, for a Python port you should do:
 
 ```bash
 git checkout -b python
@@ -54,3 +54,33 @@ cd AutoUpdate.Python
 The ports don't need to be literal, exact ports of the Cocoa or .NET versions, you're free to create something that is idiomatic and makes sense under the platform/programming language conventions, while trying to more or less match the style of the API.
 
 Before creating a new port, please open an issue so that we can avoid situations like two people creating ports for the same platform at the same time, and that so we can discuss the approach used for the port.
+
+## Contributors
+
+* [@TooTallNate](https://github.com/TooTallNate)
+* [@coreh](https://github.com/coreh)
+* [@guille](https://github.com/guille)
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Automattic, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
