@@ -11,7 +11,7 @@ Currently, two ports of the client-side library are available:
 * An Objective-C / Cocoa port, for OSX 10.6+
 * A C# / .NET port, for Windows XP/Vista/7/8/8.1
 
-The .NET port is currently behind the Cocoa port, and is not quite ready for production use. It's temporarily available only under the `dot-net` branch. Once it reaches parity with the Cocoa port it will be merged back to master.
+The .NET port is currently behind the Cocoa port, and is not quite ready for production use. It's temporarily available only under the [`dot-net`](https://github.com/cloudup/auto-update/tree/dot-net) branch. Once it reaches parity with the Cocoa port it will be merged back to master.
 
 We intend to have as many ports as possible.
 
