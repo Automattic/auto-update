@@ -55,6 +55,12 @@ The ports don't need to be literal, exact ports of the Cocoa or .NET versions, y
 
 Before creating a new port, please open an issue so that we can avoid situations like two people creating ports for the same platform at the same time, and that so we can discuss the approach used for the port.
 
+## Contributors
+
+* @TooTallNate
+* @coreh
+* @guille
+
 ## License
 
 The MIT License (MIT)
