@@ -49,7 +49,7 @@
         _destination = [NSString stringWithFormat:@"%@/auto-update.tar.gz", [[NSFileManager defaultManager] applicationSupportDirectory]];
         
         _semaphore = dispatch_semaphore_create(1);
-        _queue = dispatch_queue_create("com.cloudup.AutoUpdate.UpdateQueue", NULL);
+        _queue = dispatch_queue_create("com.automattic.AutoUpdate.UpdateQueue", NULL);
                 
         [self detectVersion];
     }
