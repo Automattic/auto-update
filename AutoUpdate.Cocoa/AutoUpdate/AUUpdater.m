@@ -123,8 +123,6 @@
     
     dispatch_async(_queue, ^{
         
-        NSLog(@"Checking for updates.");
-        
         // Build Download URL
         NSDictionary *bundleInfo = _bundle.infoDictionary;
         NSString *path = [NSString stringWithFormat:@"%@/update?architecture=%@&os=osx&osversion=%@&app=%@&appversion=%@-%@&channel=%@&percentile=%d", _host, _architecture, _osxVersion, bundleInfo[@"CFBundleName"], bundleInfo[@"CFBundleShortVersionString"], bundleInfo[@"CFBundleVersion"], _channel, (int)_percentile];
@@ -200,14 +198,11 @@
  */
 
 - (void)downloadDidFinish:(NSURLDownload *)download {
-    NSLog(@"Updates ready.");
-    
     self.state = AUUpdaterStateReady;
     __block dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
     while (self.state == AUUpdaterStateReady) {
         // notify the main thread every ten seconds about the update
         __block BOOL responded = NO;
-        NSLog(@"Notifying main thread about updates.");
         dispatch_async(dispatch_get_main_queue(), ^{
             [_delegate updater:self wantsToInstallUpdateWithCriticalStatus:_critical];
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
@@ -218,7 +213,6 @@
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         // if the main thread is blocked, force the update
         if (!responded) {
-            NSLog(@"Thread did not respond. Installing updates forcefully.");
             [self installUpdate];
         }
         dispatch_semaphore_signal(semaphore);
@@ -237,8 +231,6 @@
     _totalBytes = 0;
     _downloadedBytes = 0;
     self.state = AUUpdaterStateIdle;
-    
-    NSLog(@"No updates available.");
     
     // Try again after interval
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, _interval * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
@@ -267,7 +259,6 @@
         [_delegate updater:self didChangeState:_state];
     }
     
-    NSLog(@"Installing updates...");
     
     NSBundle *updaterBundle = [NSBundle bundleForClass:[self class]];
     NSTask *task = [[NSTask alloc] init];
