@@ -2,8 +2,8 @@
 //  AUUpdater.m
 //  AutoUpdate
 //
-//  Created by Coré on 05/01/2013.
-//  Copyright (c) 2013 Cloudup, Inc. All rights reserved.
+//  Created by Marco on 05/01/2013.
+//  Copyright (c) 2014 Automattic, Inc. All rights reserved.
 //
 
 #import "AUUpdater.h"

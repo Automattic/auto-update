@@ -3,7 +3,7 @@
 //  AutoUpdateTests
 //
 //  Created by Coré on 05/01/2013.
-//  Copyright (c) 2013 Cloudup, Inc. All rights reserved.
+//  Copyright (c) 2014 Automattic, Inc. All rights reserved.
 //
 
 #import "AutoUpdateTests.h"
