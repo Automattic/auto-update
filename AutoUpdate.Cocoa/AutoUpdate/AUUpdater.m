@@ -125,7 +125,16 @@
         
         // Build Download URL
         NSDictionary *bundleInfo = _bundle.infoDictionary;
-        NSString *path = [NSString stringWithFormat:@"%@/update?architecture=%@&os=osx&osversion=%@&app=%@&appversion=%@-%@&channel=%@&percentile=%d", _host, _architecture, _osxVersion, bundleInfo[@"CFBundleName"], bundleInfo[@"CFBundleShortVersionString"], bundleInfo[@"CFBundleVersion"], _channel, (int)_percentile];
+        NSString *host = [NSString stringWithFormat:@"%@", _host];
+        if (![host hasPrefix:@"https://"]) {
+            host = [NSString stringWithFormat:@"https://%@", _host];
+        }
+        NSString *bundleVersion = bundleInfo[@"CFBundleVersion"];
+        if (bundleVersion == NULL) {
+            bundleVersion = @"0";
+        }
+
+        NSString *path = [NSString stringWithFormat:@"%@/update?architecture=%@&os=osx&osversion=%@&app=%@&appversion=%@-%@&channel=%@&percentile=%d", host, _architecture, _osxVersion, bundleInfo[@"CFBundleName"], bundleInfo[@"CFBundleShortVersionString"], bundleVersion, _channel, (int)_percentile];
         NSURL *url = [NSURL URLWithString:path];
         
         // Start Download
